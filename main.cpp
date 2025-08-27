@@ -27,7 +27,7 @@ bool CheckSystem::checkSerial(const std::unique_ptr<Serial> &port)
 {
     logInfo("Listening for incoming data on /dev/ttyAMA1 (baudrate: 115200)...", Color::TEXT_GRN);
 
-    if (!port->isOpenPort())
+    if (!port->isOpen())
     {
         logError("Port is not open");
         return false;
@@ -124,13 +124,13 @@ void CheckSystem::initialize()
     if (_components.at("serial1").initialized)
     {
         port1_ = std::make_unique<Serial>(_components.at("serial1").name);
-        port1_->openPort();
+        port1_->connect();
     }
 
     if (_components.at("serial2").initialized)
     {
         port2_ = std::make_unique<Serial>(_components.at("serial2").name);
-        port2_->openPort();
+        port2_->connect();
     }
 }
 

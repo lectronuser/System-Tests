@@ -11,6 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(MAVLink REQUIRED)
 find_package(gpio REQUIRED)
+find_package(bus_interface REQUIRED)
 find_package(logger REQUIRED)
 find_package(serial REQUIRED)
 
@@ -33,5 +34,6 @@ target_link_libraries(${PROJECT_NAME}
     gpio
     logger
     serial
+    bus_interface
     MAVLink::mavlink
 )
