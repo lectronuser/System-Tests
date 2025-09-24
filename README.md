@@ -21,3 +21,27 @@ cmake --build build
 ./build/system_checker
 ```
 
+```bash
+# Hepsi (varsayılan)
+./system_tests
+
+# Sadece ttyAMA0 dinle
+./system_tests --serial1
+
+# Sadece ttyAMA1 dinle
+./system_tests --serial2
+
+# Sadece RealSense kontrolü
+./system_tests --realsense
+
+# LED testleri (kullanıcı onaylı)
+./system_tests --led=red
+./system_tests --led=green
+./system_tests --led=blue
+
+# Mission buton testi
+./system_tests --button=mission
+
+# Sadece servis çakışma kontrolü
+./system_tests --services
+```
